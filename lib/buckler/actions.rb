@@ -24,7 +24,7 @@ module Buckler
     return @bucket
 
   rescue Aws::S3::Errors::NoSuchBucket
-    
+
     alert "No such bucket “#{name}”"
     exit false
 
@@ -35,7 +35,7 @@ module Buckler
 
   end
 
-  # Prints a warning message about irreversable changes to the screen.
+  # Prints a warning message about irreversible changes to the screen.
   # The user is required to confirm by typing the given `name_required`
   # `additional_lines` are printed before the warning.
   # If `confirmation` matches `name_required`, this method is a no-op.

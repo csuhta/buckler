@@ -9,7 +9,7 @@ class BadOptionsTest < BucklerTest
 
     # Errors when the ID is correct but the secret is wrong
     stdout, stderr = run_buckler_command("list --id #{ENV.fetch("AWS_ACCESS_KEY_ID")} --secret BUT_ALSO_DOGGIES")
-    assert stderr.include?("Invalid AWS Secret Access Key"), "Error mesage should be printed"
+    assert stderr.include?("Invalid AWS Secret Access Key"), "Error message should be printed"
     assert stderr.include?(ENV.fetch("AWS_ACCESS_KEY_ID")), "Should repeat Key ID"
 
   end

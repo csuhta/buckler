@@ -8,7 +8,7 @@ module Buckler
 
     if @bucket.versioning.status == "Enabled"
       log "The bucket #{name.bucketize} has versioning enabled, it cannot be deleted."
-      log "You must disable versioning in the AWS Mangement Console."
+      log "You must disable versioning in the AWS Management Console."
       exit false
     end
 

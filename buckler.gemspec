@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors       = ["Corey Csuhta"]
   s.homepage      = "https://github.com/csuhta/buckler"
   s.summary       = "Perform common actions on S3 buckets from the command line"
-  s.description   = "Buckler is a Ruby command line tool for performing common actions on Amazon S3 buckets. It’s more do-what-you-want and less overwhelmingly powerful than the AWS CLI. It’s also designed to work with Heroku applications."
+  s.description   = "Buckler is a command line tool for performing common actions on Amazon S3 buckets. It’s more do-what-you-want and less overwhelmingly powerful than the AWS CLI. It’s also designed to work with Heroku applications."
 
   s.executables   = ["bucket"]
   s.files = `git ls-files`.split("\n")

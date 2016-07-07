@@ -9,7 +9,7 @@ module Buckler
       when "us-east-1"
         table << [name, human_name, "Default region"]
       when "cn-north-1"
-        table << [name, human_name, "Requires chinese account"]
+        table << [name, human_name, "Requires Chinese account"]
       else
         table << [name, human_name, nil]
       end

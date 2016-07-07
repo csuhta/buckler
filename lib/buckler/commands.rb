@@ -4,7 +4,7 @@ Buckler::Commands::Root = Cri::Command.define do
 
   name "bucket"
   usage "bucket <command> [options]"
-  summary "peform common actions on Amazon S3 buckets"
+  summary "perform common actions on Amazon S3 buckets"
   description %{
     Buckler allows you perform common actions on your Amazon S3 buckets.
 
@@ -92,7 +92,7 @@ Buckler::Commands::List = Cri::Command.define do
   description %{
     Prints a list of all Amazon S3 buckets on your account.
 
-    “All” may be releative, AWS access keys can be generated without
+    “All” may be relative, AWS access keys can be generated without
     the power to see every bucket available to the master keys.
   }
 
@@ -115,9 +115,9 @@ Buckler::Commands::Create = Cri::Command.define do
     you specify a different region with the --region option.
     Get a list of all valid regions with `Buckler regions`.
 
-    For maximum compatability, Amazon always recomends that you use
+    For maximum compatibility, Amazon always recommends that you use
     DNS and TLS-safe bucket names,
-    which contain only the ASCII characters a-z, 0-9, or the hypen (-)
+    which contain only the ASCII characters a-z, 0-9, or the hyphen (-)
 
     Bucket names with dots or uppercase letters may be unable
     to use certain Amazon Web Service features.
@@ -180,7 +180,7 @@ Buckler::Commands::Destroy = Cri::Command.define do
     available for use again.
 
     You CANNOT delete a bucket that has versioning enabled.
-    You must first disable versioning on the AWS Mangement Console.
+    You must first disable versioning on the AWS Management Console.
 
     For more information:
     https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-or-empty-bucket.html
@@ -207,7 +207,7 @@ Buckler::Commands::Sync = Cri::Command.define do
     Objects in the target bucket that don’t exist in the source bucket will be deleted.
     The end result will be two buckets with identical objects.
 
-    The following properties on each object are also transfered:
+    The following properties on each object are also transferred:
     ACLs,
     Amazon S3 metadata,
     Amazon S3 storage class,

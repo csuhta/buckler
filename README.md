@@ -13,13 +13,20 @@ gem install buckler
 bucket help
 ```
 
+### Neat Features
+
+- Buckler will "context switch" with you as you change project folders. It discovers AWS credentials in your `.env` files and Heroku applications.
+- Prompts you to confirm dangerous actions.
+- Works with bucket versioning. Issues reversible `delete` commands for versioned bucket objects.
+- The `bucket sync` command spends extra time doing what you want when you "copy" a bucket. The following properties on each object are also transferred: ACLs, metadata, storage class, `Cache-Control` header, and `Content-*` headers, and `Expires` header. This lets you get close to an exact copy of a bucket for testing migrations or other destructive changes.
+
 ### Command Reference
 
 ```shell
 # Get a list of your buckets
 bucket list
 
-# Run any command with additional debuging info
+# Run any command with additional debugging info
 bucket list --verbose
 
 # Get a list of all S3 regions

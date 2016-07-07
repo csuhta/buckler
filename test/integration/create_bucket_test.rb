@@ -12,7 +12,7 @@ class CreateBucketTest < BucklerTest
     assert stdout.include?(test_name), "Bucket name should be repeated to user"
     assert bucket.exists?, "Bucket should be created"
 
-    # Can’t create a bucket that already exisits
+    # Can’t create a bucket that already exists
 
     stdout, stderr = run_buckler_command("create #{test_name}")
     assert stderr.include?("already exists"), "“already exists” text not printed"
