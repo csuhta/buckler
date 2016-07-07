@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require "buckler"
+include Buckler::Logging
+
+begin
+  Buckler::Commands::Root.run(ARGV)
+  exit true
+rescue Aws::S3::Errors::InvalidAccessKeyId
+  alert "Invalid AWS Access Key ID: #{Buckler.aws_access_key_id}"
+  exit false
+rescue Aws::S3::Errors::SignatureDoesNotMatch
+  alert "Invalid AWS Secret Access Key provided for Access Key ID #{Buckler.aws_access_key_id}"
+  exit false
+rescue Interrupt
+  alert "\nCommand aborted."
+  exit false
+end
