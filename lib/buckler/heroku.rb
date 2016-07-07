@@ -31,8 +31,11 @@ module Buckler
     _, status = Process.wait2(pid)
 
     if status.exitstatus == 0
-      return command_output.read.to_s
+      results = command_output.read.to_s.chomp
+      verbose %{`heroku config:get #{variable_name}` returned "#{results}"}
+      return results
     else
+      verbose %{`heroku config:get #{variable_name}` returned a nonzero exit status}
       return false
     end
 

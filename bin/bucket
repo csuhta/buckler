@@ -12,6 +12,9 @@ rescue Aws::S3::Errors::InvalidAccessKeyId
 rescue Aws::S3::Errors::SignatureDoesNotMatch
   alert "Invalid AWS Secret Access Key provided for Access Key ID #{Buckler.aws_access_key_id}"
   exit false
+rescue Aws::S3::Errors::BadRequest
+  alert "Amazon S3 returned a 400 Bad Request. This is likely due to malformed input. Try re-running this command with --verbose"
+  exit false
 rescue Interrupt
   alert "\nCommand aborted."
   exit false

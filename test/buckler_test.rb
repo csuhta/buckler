@@ -23,7 +23,7 @@ class BucklerTest < Minitest::Test
   end
 
   # Fills a bucket with random, but testable objects
-  
+
   def load_bucket_with_objects(bucket)
     50.times do
       bucket.put_object({
@@ -64,8 +64,8 @@ class BucklerTest < Minitest::Test
 
     Process.wait2(pid)
 
-    stdout_results = command_stdout_ouput.read
-    stderr_results = command_stderr_ouput.read
+    stdout_results = command_stdout_ouput.read.to_s.chomp
+    stderr_results = command_stderr_ouput.read.to_s.chomp
 
     command_stdout_ouput.close
     command_stderr_ouput.close
