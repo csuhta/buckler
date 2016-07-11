@@ -19,7 +19,7 @@ module Buckler
   end
 
   # Attempts to find the AWS Access Key ID and Secret Access Key
-  # by searching the command line paramters, the environment, the .env, and Heroku in that order.
+  # by searching the command line parameters, the environment, the .env, and Heroku in that order.
   # The parameters are the values of --id and --secret on the command line.
   # The program ends if credentials cannot be discovered.
   def self.discover_aws_credentials!(key_id:nil, key:nil)
