@@ -6,7 +6,7 @@ module Buckler
     def initialize
       @lambda_pool = []
       @thread_pool = []
-      @max_threads = Etc.nprocessors * 2 # Twice the number of CPU cores available to Ruby
+      @max_threads = Etc.nprocessors # The number of CPU cores available to Ruby
     end
 
     def queue(λ)
@@ -27,9 +27,10 @@ module Buckler
 
       start_time = Time.now
 
-      @lambda_pool.each do |λ|
+      @lambda_pool.lazy.each do |λ|
         while running_thread_count >= @max_threads
           verbose "Sleeping due to worker limit. #{running_thread_count} currently running."
+          GC.start
           sleep 0.2
         end
         @thread_pool << Thread.new(&λ)

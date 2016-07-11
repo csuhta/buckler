@@ -10,6 +10,7 @@ class SyncBucketsTest < BucklerTest
 
     stdout, stderr = run_buckler_command("sync #{source_name} #{target_name} --confirm #{target_name}")
     assert target_bucket.objects.to_a.many?, "The target bucket should be filled with goodies"
+    assert target_bucket.objects.to_a.count.eql?(50), "The target bucket should be filled with goodies"
     assert target_bucket.objects.first.object.content_type.include?("text/plain"), "Content-Type headers should have synced"
     assert target_bucket.objects.first.object.cache_control.include?("no-cache"), "Cache-Control headers should have synced"
 
