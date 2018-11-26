@@ -24,8 +24,8 @@ Gem::Specification.new do |s|
   s.add_dependency "dotenv", "~> 2.1"
   s.add_dependency "cri", "~> 2.7"
 
-  s.add_development_dependency "rake", "~> 11.2"
+  s.add_development_dependency "rake", ">= 11"
   s.add_development_dependency "minitest", "~> 5.7"
-  s.add_development_dependency "yard", "~> 0.6"
+  s.add_development_dependency "yard", ">= 0.9.11"
 
 end

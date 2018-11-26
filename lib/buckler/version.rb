@@ -2,7 +2,7 @@ module Buckler
 
   # Returns Buckler’s version number
   def self.version
-    Gem::Version.new("1.0.3")
+    Gem::Version.new("1.0.4")
   end
 
   # Contains Buckler’s version number
